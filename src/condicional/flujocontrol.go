@@ -1,17 +1,22 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"log"
+	"strconv"
+	"time"
+)
 
 func main() {
 	x := 28
 
-	//instruccion if
+	//instruccion condicional
 	if x%2 == 0 {
 		fmt.Println(x, "is even")
 	}
 
-	/* instrucciones if compuestos
-	num solo existe en los bloques if else
+	/* instrucciones condicional compuestos
+	num solo existe en los bloques condicional else
 	*/
 	if num := givemeanumber(); num < 0 {
 		fmt.Println(num, "is negative")
@@ -21,7 +26,21 @@ func main() {
 		fmt.Println(num, "has multiple digits")
 	}
 
+	// Convertir texto a numero
+	value, err := strconv.Atoi("45")
+	if err != nil {
+		log.Fatal(err,value)
+	}
+	if day:= getWeekDay(); day=="Thursday"{
+		fmt.Println("It is Thursday")
+	}
+
 }
 func givemeanumber() int {
 	return -1
+}
+
+func getWeekDay() string{
+	today:= time.Now().Weekday()
+	return today.String()
 }
